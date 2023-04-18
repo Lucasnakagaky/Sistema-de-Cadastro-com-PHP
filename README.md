@@ -1,2 +1,2 @@
 # Sistema-de-Cadastro-com-PHP
-ainda sendo desenvolvido o back-end
+Ainda sendo desenvolvido o back-end
