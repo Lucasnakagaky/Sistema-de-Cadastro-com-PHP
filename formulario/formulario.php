@@ -24,6 +24,7 @@ if(isset($_POST['submit'])){
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
+    $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
     $sexo = $_POST['genero'];
     $data_nascimento = $_POST['data_nascimento'];
@@ -31,8 +32,8 @@ if(isset($_POST['submit'])){
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nascimento,cidade,estado,endereco)
-    VALUES ('$nome','$email','$telefone','$sexo','$data_nascimento','$cidade','$estado','$endereco')");
+    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,telefone,sexo,data_nascimento,cidade,estado,endereco)
+    VALUES ('$nome','$email','$senha','$telefone','$sexo','$data_nascimento','$cidade','$estado','$endereco')");
 
 
     
@@ -49,6 +50,7 @@ if(isset($_POST['submit'])){
     <title>Formulario | GN</title>
 </head>
 <body>
+<a href="../home/home.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
@@ -62,6 +64,11 @@ if(isset($_POST['submit'])){
                 <div class="inputBox">
                     <input type="text" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
