@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <h1>Escolha sua opção</h1>
+    <h1>Bem-Vindo!</h1>
+    <h2>Se não tiver conta se cadastre</h2>
 
     <div class="box">
         <a href="../login/login.php">Login</a>
