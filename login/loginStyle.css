@@ -21,7 +21,7 @@ input {
     font-size: 15px;
 }
 
-button {
+.tela-login .inputSubmit {
     background-color: dodgerblue;
     border: none;
     padding: 15px;
@@ -31,7 +31,7 @@ button {
     font-size: 15px;
 }
 
-button:hover {
+.tela-login .inputSubmit:hover {
     background-color: deepskyblue;
     cursor: pointer;
 }

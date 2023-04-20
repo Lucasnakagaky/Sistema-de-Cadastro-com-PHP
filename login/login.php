@@ -13,12 +13,12 @@
     <a href="../home/home.php">Voltar</a>
     <div class="tela-login">
         <h1>Login</h1>
-        <form action="" method="POST">
+        <form action="testeLogin.php" method="POST">
             <input type="text" name="email" placeholder="E-mail">
             <br><br>
             <input type="password" name="senha" placeholder="Senha">
             <br><br>
-            <button type="submit">Enivar</button>
+            <input class="inputSubmit" type="submit" name="submit" value="Enviar">
         </form>
     </div>
 
