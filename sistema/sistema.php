@@ -1,7 +1,7 @@
 <?php
 session_start();
 // print_r($_SESSION);
-
+include_once('../formulario/config.php');
 if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
 
     unset($_SESSION['email']);
@@ -10,6 +10,12 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
 }
 
 $logado = $_SESSION['email'];
+
+$sql = "SELECT * FROM usuarios ORDER BY id DESC";
+
+$result = $conexao->query($sql);
+
+// print_r($result);
 
 ?>
 <!DOCTYPE html>
@@ -39,8 +45,47 @@ $logado = $_SESSION['email'];
         </div>
     </nav>
     <?php
-    echo "<h1>Bem-vindo <u>$logado</u></h1>";
+    echo "<h1 class=text-white >Bem-vindo <u>$logado</u></h1>";
     ?>
+
+    <div class="m-5">
+        <table class="table text-white table-bg">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Senha</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">endereco</th>
+                    <th scope="col">...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($user_data = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $user_data['id'] . "</td>";
+                    echo "<td>" . $user_data['nome'] . "</td>";
+                    echo "<td>" . $user_data['email'] . "</td>";
+                    echo "<td>" . $user_data['senha'] . "</td>";
+                    echo "<td>" . $user_data['telefone'] . "</td>";
+                    echo "<td>" . $user_data['sexo'] . "</td>";
+                    echo "<td>" . $user_data['data_nascimento'] . "</td>";
+                    echo "<td>" . $user_data['cidade'] . "</td>";
+                    echo "<td>" . $user_data['estado'] . "</td>";
+                    echo "<td>" . $user_data['endereco'] . "</td>";
+                    echo "<td>" . "Ações" . "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
