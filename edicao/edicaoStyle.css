@@ -12,11 +12,11 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
     border-radius: 15px;
+
 }
 
 .box fieldset {
     border: 3px solid dodgerblue;
-    padding: 10px;
 }
 
 .box fieldset legend {
@@ -65,7 +65,7 @@ body {
     font-size: 15px;
 }
 
-.box fieldset #submit {
+.box fieldset #update {
     background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
     width: 100%;
     border: none;
@@ -76,6 +76,6 @@ body {
     border-radius: 10px;
 }
 
-.box fieldset #submit:hover {
+.box fieldset #update:hover {
     background-color: dodgerblue;
 }
