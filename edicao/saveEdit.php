@@ -1,5 +1,4 @@
 <?php
-
 include_once('../formulario/config.php');
 
 
@@ -16,14 +15,14 @@ if(isset($_POST['update'])){
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
 
-    $sqlUpdate = "UPDATE usuarios SET nome='$nome', email='$email, senha='$senha, telefone='$telefone',
-     sexo='$sexo, data_nascimento='$data_nascimento', cidade='$cidade', estado='$estado', endereco='$endereco'
-     WHERE  id='$id'";
+    $sqlUpdate = "UPDATE  usuarios 
+    SET nome='$nome',senha='$senha',email='$email',telefone='$telefone',sexo='$sexo',data_nascimento='$data_nascimento',cidade='$cidade',estado='$estado',endereco='$endereco'
+    WHERE id=$id";
 
      $result = $conexao->query($sqlUpdate);
 }
 
-header('Location: ../sistema/sistema.php');
+header("Location: ../sistema/sistema.php");
 
 
 ?>

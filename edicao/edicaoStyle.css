@@ -12,11 +12,11 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
     border-radius: 15px;
-
 }
 
 .box fieldset {
     border: 3px solid dodgerblue;
+    padding: 10px;
 }
 
 .box fieldset legend {

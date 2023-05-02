@@ -1,8 +1,7 @@
 <?php
+include_once('../formulario/config.php');
 
 if (!empty($_GET['id'])) {
-
-    include_once('../formulario/config.php');
 
     $id = $_GET['id'];
 
@@ -13,6 +12,7 @@ if (!empty($_GET['id'])) {
     if ($result->num_rows > 0) {
 
         while ($user_data = mysqli_fetch_assoc($result)) {
+
 
             $nome = $user_data['nome'];
             $email = $user_data['email'];
@@ -25,9 +25,12 @@ if (!empty($_GET['id'])) {
             $endereco = $user_data['endereco'];
         }
     } else {
-        header("../sistema/sistema.php");
+        header("Location: ../sistema/sistema.php");
     }
+} else {
+    header("Location: ../sistema/sistema.php");
 }
+
 
 ?>
 <!DOCTYPE html>
