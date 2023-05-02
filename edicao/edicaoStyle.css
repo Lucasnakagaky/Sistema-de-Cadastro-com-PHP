@@ -65,7 +65,7 @@ body {
     font-size: 15px;
 }
 
-.box fieldset #update {
+.box fieldset #submit {
     background-image: linear-gradient(to right, rgb(0, 92, 197), rgb(90, 20, 220));
     width: 100%;
     border: none;
@@ -76,6 +76,6 @@ body {
     border-radius: 10px;
 }
 
-.box fieldset #update:hover {
+.box fieldset #submit:hover {
     background-color: dodgerblue;
 }

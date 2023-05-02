@@ -25,10 +25,10 @@ if (!empty($_GET['id'])) {
             $endereco = $user_data['endereco'];
         }
     } else {
-        header("Location: ../sistema/sistema.php");
+        header('Location: ../sistema/sistema.php');
     }
 } else {
-    header("Location: ../sistema/sistema.php");
+    header('Location: ../sistema/sistema.php');
 }
 
 
@@ -50,7 +50,7 @@ if (!empty($_GET['id'])) {
 <body>
     <a href="../sistema/sistema.php" class="btn btn-warning ">Voltar</a>
     <div class="box">
-        <form action="formulario.php" method="POST">
+        <form action="saveEdit.php" method="POST">
             <fieldset>
                 <legend><b>Fórmulário de Edição</b></legend>
                 <br>
@@ -74,13 +74,13 @@ if (!empty($_GET['id'])) {
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
                 <p>Sexo:</p>
-                <input type="radio" id="feminino" <?php echo $sexo == 'feminino' ? 'checked' : '' ?> name="genero" value="feminino" required>
+                <input type="radio" id="feminino"  <?php echo ($sexo == 'feminino') ? 'checked' : '';?> name="genero" value="feminino" required>
                 <label for="feminino">Feminino</label>
                 <br>
-                <input type="radio" id="masculino" <?php echo $sexo == 'masculino' ? 'checked' : '' ?> name="genero" value="masculino" required>
+                <input type="radio" id="masculino" <?php echo ($sexo == 'masculino') ? 'checked' : '';?> name="genero" value="masculino" required>
                 <label for="masculino">Masculino</label>
                 <br>
-                <input type="radio" id="outro" <?php echo $sexo == 'outro' ? 'checked' : '' ?> name="genero" value="outro" required>
+                <input type="radio" id="outro" <?php echo ($sexo == 'outro') ? 'checked' : '';?> name="genero" value="outro" required>
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="data_nascimento"><b>Data de Nascimento:</b></label>
@@ -101,8 +101,8 @@ if (!empty($_GET['id'])) {
                     <label for="endereco" class="labelInput">Endereço</label>
                 </div>
                 <br><br>
-                <input type="hidden" name="id" value="<?php echo $id ?>">
-                <input type="submit" name="update" id="update">
+                <input type="hidden" name="id" value=<?php echo $id;?>>
+                <input type="submit" name="update" id="submit">
             </fieldset>
         </form>
     </div>
